@@ -3,11 +3,17 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
+  image_url: lorem.png
   price: 9.99
 
 two:
-  title: MyString
+  title: MyString2
   description: MyText
-  image_url: MyString
+  image_url: lorem.png
   price: 9.99
+
+adidas:
+  title: Adidas pants
+  description: Three-lined pants made for running and exercising
+  price: 56.78
+  image_url: adidas.png
