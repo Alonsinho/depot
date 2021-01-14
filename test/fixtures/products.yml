@@ -12,8 +12,8 @@ two:
   image_url: lorem.png
   price: 9.99
 
-adidas:
-  title: Adidas
+clipper:
+  title: Clipper de Fresa
   description: Any description is accepted
   price: 8.76
   image_url: clipper.png
