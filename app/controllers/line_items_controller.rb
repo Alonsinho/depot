@@ -35,6 +35,7 @@ class LineItemsController < ApplicationController
           notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created,
           location: @line_item }
+        session[:counter] = 0
       else
         format.html { render :new }
         format.json { render json: @line_item.errors,

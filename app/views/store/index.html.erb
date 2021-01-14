@@ -1,6 +1,13 @@
 <% if notice %>
   <aside id="notice"><%= notice %></aside>
 <% end %>
+
+<% if session[:counter] > 5 %>
+  <p>
+    You have accessed the catalog <%= pluralize(session[:counter], "time") %>
+  </p>
+<% end %>
+
 <h1>Canarian Products Catalog</h1>
 
 <ul class="catalog">
