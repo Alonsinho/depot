@@ -24,8 +24,8 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
 
-    assert_select 'h2', 'Your Pragmatic Cart'
-    assert_select 'main li', "1 &times Clipper de Fresa"
+    assert_select 'h2', 'Your Cart'
+    assert_select 'td', "Clipper de Fresa"
   end
 
   test "should show line_item" do
