@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_action :inaccessible_cart, only:[:show]
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
@@ -78,5 +79,14 @@ class CartsController < ApplicationController
     def invalid_cart
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_index_url, notice: 'Invalid cart'
+    end
+
+    # Only allow access the cart stored in the current session
+    def inaccessible_cart
+      cart = Cart.find(params[:id])
+      unless cart.id == session[:cart_id]
+        logger.error "Attempt to access cart #{params[:id]} from another session"
+        redirect_to store_index_url, notice: '¡That is not your cart!'
+      end
     end
 end
