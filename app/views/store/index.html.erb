@@ -28,7 +28,8 @@
             separator: ',',
             delimiter: '.') %>
             <%= button_to 'Add to Cart',
-            line_items_path(product_id: product) %>
+            line_items_path(product_id: product),
+            remote: true %>
           </div>
         </li>
       <% end %>
