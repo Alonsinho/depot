@@ -52,7 +52,7 @@ class ProductTest < ActiveSupport::TestCase
 
   test "product is not valid without a unique title" do
     product = Product.new(
-      title: products(:adidas).title, # Use title from adidas row in products.yml
+      title: products(:clipper).title, # Use fixtures frpm products.yml
       description: "Product description",
       price: 1,
       image_url: "fred.gif")
