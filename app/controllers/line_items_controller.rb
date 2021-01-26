@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create, :destroy]
+  before_action :set_cart, only: [:create, :destroy, :update]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -47,9 +47,16 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
+    new_quantity = @line_item.quantity - 1 # Quantity updated
+
     respond_to do |format|
-      if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+      if @line_item.update(quantity: new_quantity)
+        # Whether quantity is 0 Line Item is deleted
+        if new_quantity == 0
+          @line_item.destroy
+        end
+        format.html { redirect_to store_index_url }
+        format.js
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
