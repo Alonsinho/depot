@@ -27,3 +27,49 @@ es:
         separator: ","
         delimiter: "."
         format: "%n%u"
+
+  orders:
+    new:
+      legend: "Por favor, introduza sus datos"
+    form:
+      name: "Nombre"
+      address_html: "Dirección"
+      email: "E-mail"
+      pay_type: "Método de pago"
+      pay_prompt_html: "Seleccione un método de pago"
+      submit: "Confirmar Pedido"
+      pay_types:
+        check: "Cheque"
+        credit_card: "Tarjeta de Cŕedito"
+        purchase_order: "Orden de Compra"
+      check_pay_type:
+        routing_number: "# de Enrutamiento"
+        account_number: "# de Cuenta"
+      credit_card_pay_type:
+        cc_number: "Número"
+        expiration_date: "Expiración"
+      purchase_order_pay_type:
+        po_number: "Número"
+
+  thanks: "Gracias por su pedido"
+
+  activerecord:
+    errors:
+      messages:
+        inclusion: "no está incluido en la lista"
+        blank: "no puede quedar en blanco"
+    models:
+      order: "pedido"
+    attributes:
+      order:
+        address: "Dirección"
+        name: "Nombre"
+        email: "E-mail"
+        pay_type: "Método de pago"
+
+  errors:
+    template:
+      body: "Hay problemas con los siguientes campos:"
+      header:
+        one: "Un error ha impedido que este %{model} se guarde"
+        other: "%{count} errores han impedido que este %{model} se guarde"

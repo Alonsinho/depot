@@ -8,6 +8,12 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+// Makes the I18n object available
+window.I18n = require("../../../public/javascripts/i18n")
+
+// Serve up the translations that i18n-js provides
+require("../../../public/javascripts/translations")
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
