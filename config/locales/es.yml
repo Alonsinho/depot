@@ -1,0 +1,29 @@
+es:
+
+  layouts:
+    application:
+      title: "Tienda de Productos Canarios"
+      home: "Inicio"
+      questions: "Preguntas"
+      news: "Noticias"
+      contact: "Contacto"
+
+  store:
+    index:
+      title_html: "Catálogo de Productos Canarios"
+      add_html: "Añadir al Carrito"
+
+  carts:
+    cart:
+      title: "Tu Carrito"
+      empty: "Vaciar Carrito"
+      checkout: "Comprar"
+
+  number:
+    currency:
+      format:
+        unit: "€"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format: "%n%u"
